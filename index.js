@@ -109,4 +109,4 @@ function delay(delayInms) {
     });
 }
 
-//Bot coded by Beyondgod like
+//Bot coded by Beyond-_-
