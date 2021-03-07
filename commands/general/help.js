@@ -23,7 +23,7 @@ module.exports = {
         //define the help embed
         let helpEmbed = new MessageEmbed()
             .setTitle("Vivex Help")
-            .setDescription(`**Version:** \`v0.1\` \n**PREFIX:** \`${PREFIX}\``)
+            .setDescription(`**Version:** \`v0.1\` \n**ORIGINAL PREFIX:** \`${PREFIX}\` \n**SERVER PREFIX:** \`${prefix}\` `)
             .setFooter(client.user.username + `Type: ${prefix}help <Command>  for more information!`)
             .setColor("#c219d8");
         //define argstrue to negative
@@ -35,6 +35,9 @@ module.exports = {
                 break;
             case "prefix":
                 ifargstruedothis = 1;
+                break;
+            case "snipe":
+                ifargstruedothis = 2;
                 break;
             default:
                 commands.forEach((cmd) => {
