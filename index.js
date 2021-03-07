@@ -4,16 +4,22 @@ const { Client, Collection, MessageEmbed, MessageAttachment } = require(`discord
 const { readdirSync } = require(`fs`);
 const { join } = require(`path`);
 const db = require('quick.db');
-const { TOKEN, PREFIX, AVATARURL, BOTNAME, } = require(`./config/config.json`);
+const prefix = require('./commands/Mod/prefix');
+const { TOKEN, PREFIX, AVATARURL, BOTNAME, MONGO_URL} = require(`./config/config.json`);
 const client = new Client({ disableMentions: ``, partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 client.login(TOKEN);
 client.commands = new Collection();
+client.snipes = new Discord.Collection();
 client.setMaxListeners(0);
 client.prefix = PREFIX;
 client.queue = new Map();
 const cooldowns = new Collection();
 const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, `\\$&`);
 require("./util/eventHandler")(client)
+const mongoose = require('mongoose');
+
+mongoose.connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true, })
+mongoose.set('useFindAndModify', false);
 
 //this fires when the BOT STARTS DO NOT TOUCH
 
@@ -29,12 +35,18 @@ for (const file of commandFiles) {
     const command = require(join(__dirname, `commands`, `${file}`));
     client.commands.set(command.name, command);
 }
+commandFiles = readdirSync(join(__dirname, `./commands/general`)).filter((file) => file.endsWith(`.js`));
+for (const file of commandFiles) {
+    const command = require(join(__dirname, `./commands/general`, `${file}`));
+    client.commands.set(command.name, command);
+}
 commandFiles = readdirSync(join(__dirname, `./commands/Mod`)).filter((file) => file.endsWith(`.js`));
 for (const file of commandFiles) {
     const command = require(join(__dirname, `./commands/Mod`, `${file}`));
     client.commands.set(command.name, command);
 }
 //COMMANDS //DO NOT TOUCH
+
 client.on(`message`, async (message) => {
     if (message.author.bot) return;
 
@@ -61,7 +73,6 @@ client.on(`message`, async (message) => {
         //send the Message
         message.channel.send(embed)
     }
-
 
     //command Handler DO NOT TOUCH
     const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
@@ -101,6 +112,7 @@ client.on(`message`, async (message) => {
 
 
 });
+
 function delay(delayInms) {
     return new Promise(resolve => {
         setTimeout(() => {

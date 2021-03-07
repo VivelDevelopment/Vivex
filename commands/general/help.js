@@ -3,7 +3,7 @@ const {
     PREFIX,
     approveemoji,
     denyemoji
-} = require(`../config/config.json`);
+} = require(`../../config/config.json`);
 const db = require('quick.db');
 
 module.exports = {
@@ -23,19 +23,24 @@ module.exports = {
         //define the help embed
         let helpEmbed = new MessageEmbed()
             .setTitle("Vivex Help")
-            .setDescription(`**Version:** \`v0.1\` \n**PREFIX:** \`${PREFIX}\``)
+            .setDescription(`**Version:** \`v0.1\` \n**ORIGINAL PREFIX:** \`${PREFIX}\` \n**SERVER PREFIX:** \`${prefix}\` `)
             .setFooter(client.user.username + `Type: ${prefix}help <Command>  for more information!`)
             .setColor("#c219d8");
         //define argstrue to negative
         let ifargstruedothis = -1;
 
         switch (args[0]) {
-            case "prefix":
+            case "help":
                 ifargstruedothis = 0;
                 break;
-
-            case "help":
+            case "prefix":
                 ifargstruedothis = 1;
+                break;
+            case "snipe":
+                ifargstruedothis = 2;
+                break;
+            case "warn":
+                ifargstruedothis = 3;
                 break;
             default:
                 commands.forEach((cmd) => {
