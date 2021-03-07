@@ -1,8 +1,0 @@
-{
-    "TOKEN": "ODE4MDYxMTcwNTM1Njk0MzU2.YESk1Q.1ReW6PN5dBgE9mXiXkqnAvhB_WA",
-    "PREFIX": "-",
-    "approveemoji": "✅",
-    "denyemoji": "❗",
-    "erroremoji": "❌",
-    "MONGO_URL": "mongodb+srv://beyond:betond1010@cluster0.7lyhl.mongodb.net/test"
-}
