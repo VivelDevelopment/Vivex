@@ -3,7 +3,7 @@ const {
     PREFIX,
     approveemoji,
     denyemoji
-} = require(`../config/config.json`);
+} = require(`../../config/config.json`);
 const db = require('quick.db');
 
 module.exports = {
@@ -30,11 +30,10 @@ module.exports = {
         let ifargstruedothis = -1;
 
         switch (args[0]) {
-            case "prefix":
+            case "help":
                 ifargstruedothis = 0;
                 break;
-
-            case "help":
+            case "prefix":
                 ifargstruedothis = 1;
                 break;
             default:
