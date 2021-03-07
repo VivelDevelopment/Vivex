@@ -5,7 +5,7 @@ const { readdirSync } = require(`fs`);
 const { join } = require(`path`);
 const db = require('quick.db');
 const prefix = require('./commands/Mod/prefix');
-const { TOKEN, PREFIX, AVATARURL, BOTNAME, } = require(`./config/config.json`);
+const { TOKEN, PREFIX, AVATARURL, BOTNAME, MONGO_URL} = require(`./config/config.json`);
 const client = new Client({ disableMentions: ``, partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 client.login(TOKEN);
 client.commands = new Collection();
@@ -16,6 +16,10 @@ client.queue = new Map();
 const cooldowns = new Collection();
 const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, `\\$&`);
 require("./util/eventHandler")(client)
+const mongoose = require('mongoose');
+
+mongoose.connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true, })
+mongoose.set('useFindAndModify', false);
 
 //this fires when the BOT STARTS DO NOT TOUCH
 

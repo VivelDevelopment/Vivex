@@ -14,6 +14,10 @@ module.exports = {
     cooldown: 3,
     edesc: `Type this Command, to set a snipes Usage: ${PREFIX}snipe `,
     async execute(message, args, client) {
+        if (!message.member.hasPermission("MANAGE_MESSAGES")) {
+            return message.reply("You are not allowed to warn members!")
+        }
+
         const msg = client.snipes.get(message.channel.id)
 
         const noMessage = new Discord.MessageEmbed()

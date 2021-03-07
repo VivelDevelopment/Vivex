@@ -30,14 +30,17 @@ module.exports = {
         let ifargstruedothis = -1;
 
         switch (args[0]) {
-            case "prefix":
+            case "help":
                 ifargstruedothis = 0;
                 break;
-             case "snipe":
+            case "prefix":
                 ifargstruedothis = 1;
                 break;
-                 case "help":
+            case "snipe":
                 ifargstruedothis = 2;
+                break;
+            case "warn":
+                ifargstruedothis = 3;
                 break;
             default:
                 commands.forEach((cmd) => {
