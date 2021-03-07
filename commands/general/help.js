@@ -30,10 +30,10 @@ module.exports = {
         let ifargstruedothis = -1;
 
         switch (args[0]) {
-            case "help":
+            case "prefix":
                 ifargstruedothis = 0;
                 break;
-            case "prefix":
+                 case "help":
                 ifargstruedothis = 1;
                 break;
             default:
