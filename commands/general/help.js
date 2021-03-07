@@ -33,10 +33,10 @@ module.exports = {
             case "prefix":
                 ifargstruedothis = 0;
                 break;
-                 case "help":
+             case "snipe":
                 ifargstruedothis = 1;
                 break;
-            case "snipe":
+                 case "help":
                 ifargstruedothis = 2;
                 break;
             default:
