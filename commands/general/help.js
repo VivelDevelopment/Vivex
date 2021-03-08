@@ -36,17 +36,26 @@ module.exports = {
             case "docs":
                 ifargstruedothis = 1;
                 break;
-            case "prefix":
+            case "ban":
                 ifargstruedothis = 2;
                 break;
-            case "snipe":
+            case "kick":
                 ifargstruedothis = 3;
                 break;
-            case "warn":
+            case "prefix":
                 ifargstruedothis = 4;
                 break;
+            case "snipe":
+                ifargstruedothis = 4;
+                break;
+            case "unban":
+                ifargstruedothis = 4;
+                break;
+            case "warn":
+                ifargstruedothis = 6;
+                break;
             case "eval":
-                ifargstruedothis = 5;
+                ifargstruedothis = 7;
                 break;
             default:
                 commands.forEach((cmd) => {

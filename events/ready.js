@@ -12,6 +12,7 @@ module.exports = client => {
     }, (5000));
 
 
+
     client.user.setStatus('dnd')
     figlet.text(`${client.user.username} ready!`, function (err, data) {
         if (err) {
@@ -22,5 +23,6 @@ module.exports = client => {
         console.log(data)
         console.log(`═════════════════════════════════════════════════════════════════════════════`);
     })
+
 
 }
