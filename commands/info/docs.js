@@ -23,7 +23,7 @@ module.exports = {
                     message.channel.send({ embed: embed })
 
                 } else {
-                    message.channel.send(`No results found for docs`)
+                    message.channel.send(`No results found for **${args}**`)
                 }
             })
             .catch(e => {
