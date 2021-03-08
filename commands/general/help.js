@@ -30,12 +30,13 @@ module.exports = {
         let ifargstruedothis = -1;
 
         switch (args[0]) {
-            case "help":
+                case "prefix":
                 ifargstruedothis = 0;
                 break;
-            case "docs":
+            case "snipe":
                 ifargstruedothis = 1;
                 break;
+<<<<<<< HEAD
             case "ban":
                 ifargstruedothis = 2;
                 break;
@@ -43,6 +44,15 @@ module.exports = {
                 ifargstruedothis = 3;
                 break;
             case "prefix":
+=======
+            case "warn":
+                ifargstruedothis = 2;
+                break;
+            case "help":
+                ifargstruedothis = 3;
+                break;
+            case "docs":
+>>>>>>> ac2d5376770759c8c1a8d819fb39deaf97925df6
                 ifargstruedothis = 4;
                 break;
             case "snipe":
