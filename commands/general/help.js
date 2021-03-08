@@ -33,14 +33,20 @@ module.exports = {
             case "help":
                 ifargstruedothis = 0;
                 break;
-            case "prefix":
+            case "docs":
                 ifargstruedothis = 1;
                 break;
-            case "snipe":
+            case "prefix":
                 ifargstruedothis = 2;
                 break;
-            case "warn":
+            case "snipe":
                 ifargstruedothis = 3;
+                break;
+            case "warn":
+                ifargstruedothis = 4;
+                break;
+            case "eval":
+                ifargstruedothis = 5;
                 break;
             default:
                 commands.forEach((cmd) => {

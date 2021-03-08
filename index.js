@@ -5,8 +5,8 @@ const { readdirSync } = require(`fs`);
 const { join } = require(`path`);
 const db = require('quick.db');
 const prefix = require('./commands/Mod/prefix');
-const { TOKEN, PREFIX, AVATARURL, BOTNAME, MONGO_URL} = require(`./config/config.json`);
-const client = new Client({ disableMentions: ``, partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
+const { TOKEN, PREFIX, AVATARURL, BOTNAME, MONGO_URL, ownerID } = require(`./config/config.json`);
+const client = new Client({ enableMentions: 'all', partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 client.login(TOKEN);
 client.commands = new Collection();
 client.snipes = new Discord.Collection();
@@ -16,6 +16,7 @@ client.queue = new Map();
 const cooldowns = new Collection();
 const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, `\\$&`);
 require("./util/eventHandler")(client)
+const beautify = require('beautify')
 const mongoose = require('mongoose');
 
 mongoose.connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true, })
@@ -40,11 +41,23 @@ for (const file of commandFiles) {
     const command = require(join(__dirname, `./commands/general`, `${file}`));
     client.commands.set(command.name, command);
 }
+commandFiles = readdirSync(join(__dirname, `./commands/info`)).filter((file) => file.endsWith(`.js`));
+for (const file of commandFiles) {
+    const command = require(join(__dirname, `./commands/info`, `${file}`));
+    client.commands.set(command.name, command);
+}
 commandFiles = readdirSync(join(__dirname, `./commands/Mod`)).filter((file) => file.endsWith(`.js`));
 for (const file of commandFiles) {
     const command = require(join(__dirname, `./commands/Mod`, `${file}`));
     client.commands.set(command.name, command);
 }
+commandFiles = readdirSync(join(__dirname, `./commands/owner`)).filter((file) => file.endsWith(`.js`));
+for (const file of commandFiles) {
+    const command = require(join(__dirname, `./commands/owner`, `${file}`));
+    client.commands.set(command.name, command);
+}
+
+
 //COMMANDS //DO NOT TOUCH
 
 client.on(`message`, async (message) => {
@@ -59,6 +72,7 @@ client.on(`message`, async (message) => {
     if (message.content.includes(client.user.id)) {
         message.reply(new Discord.MessageEmbed().setColor("#c219d8").setAuthor(`${message.author.username}, My Prefix is ${prefix}, to get started; type ${prefix}help`, message.author.displayAvatarURL({ dynamic: true })));
     }
+
     //An embed announcement for everyone but no one knows so fine ^w^
     if (message.content.startsWith(`${prefix}embed`)) {
         //define saymsg
