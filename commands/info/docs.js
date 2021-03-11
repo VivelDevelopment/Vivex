@@ -6,7 +6,11 @@ const {
 } = require(`../../config/config.json`);
 const fetch = require('node-fetch')
 module.exports = {
+<<<<<<< Updated upstream
     name: `docs`,
+=======
+    name: "docs",
+>>>>>>> Stashed changes
     description: `eval commands works only with bot's owners`,
     aliases: ["discord.js", "discordjs", "djs"],
     cooldown: 3,
@@ -23,7 +27,11 @@ module.exports = {
                     message.channel.send({ embed: embed })
 
                 } else {
+<<<<<<< Updated upstream
                     message.channel.send(`No results found for **${args}**`)
+=======
+                    message.channel.send(`No results found for docs`)
+>>>>>>> Stashed changes
                 }
             })
             .catch(e => {
@@ -31,4 +39,8 @@ module.exports = {
                 message.channel.send(`There was a error`)
             })
     }
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes

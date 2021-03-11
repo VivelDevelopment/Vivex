@@ -20,10 +20,19 @@
   "dependencies": {
     "beautify": "^0.0.8",
     "canvas-senpai": "^1.0.0",
+<<<<<<< Updated upstream
+=======
+    "cleverbot-node": "^0.3.11",
+>>>>>>> Stashed changes
     "discord.js": "^12.5.1",
+    "entities": "^2.2.0",
     "figlet": "^1.5.0",
     "mongoose": "^5.11.19",
     "node-fetch": "^2.6.1",
+<<<<<<< Updated upstream
+=======
+    "parse-ms": "^2.1.0",
+>>>>>>> Stashed changes
     "quick.db": "^7.1.3"
   }
 }

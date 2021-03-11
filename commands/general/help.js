@@ -23,16 +23,84 @@ module.exports = {
         //define the help embed
         let helpEmbed = new MessageEmbed()
             .setTitle("Vivex Help")
-            .setDescription(`**Version:** \`v0.1\` \n**ORIGINAL PREFIX:** \`${PREFIX}\` \n**SERVER PREFIX:** \`${prefix}\` `)
+            .setDescription(`**Version:** \`v0.2\` \n**ORIGINAL PREFIX:** \`${PREFIX}\` \n**SERVER PREFIX:** \`${prefix}\` `)
             .setFooter(client.user.username + `Type: ${prefix}help <Command>  for more information!`)
             .setColor("#c219d8");
         //define argstrue to negative
         let ifargstruedothis = -1;
 
         switch (args[0]) {
+<<<<<<< Updated upstream
                case "ban":
+=======
+            case "balance":
+>>>>>>> Stashed changes
                 ifargstruedothis = 0;
+                break
+            case "beg":
+                ifargstruedothis = 1;
                 break;
+            case "buy":
+                ifargstruedothis = 2;
+                break;
+            case "daily":
+                ifargstruedothis = 3;
+                break;
+            case "deposit":
+                ifargstruedothis = 4;
+                break;
+            case "leaderboard":
+                ifargstruedothis = 5;
+                break;
+            case "pay":
+                ifargstruedothis = 6;
+                break;
+            case "profile":
+                ifargstruedothis = 7;
+                break;
+            case "removemoney":
+                ifargstruedothis = 8;
+                break;
+            case "rob":
+                ifargstruedothis = 9;
+                break;
+            case "roulette":
+                ifargstruedothis = 10;
+                break;
+            case "sell":
+                ifargstruedothis = 11;
+                break;
+            case "slots":
+                ifargstruedothis = 12;
+                break;
+            case "store":
+                ifargstruedothis = 13;
+                break;
+            case "store2":
+                ifargstruedothis = 14;
+                break;
+            case "weekly":
+                ifargstruedothis = 15;
+                break;
+            case "withdraw":
+                ifargstruedothis = 16;
+                break;
+            case "work":
+                ifargstruedothis = 17;
+                break;
+            case "help":
+                ifargstruedothis = 18;
+                break;
+            case "docs":
+                ifargstruedothis = 19;
+                break;
+            case "ban":
+                ifargstruedothis = 20;
+                break;
+            case "kick":
+                ifargstruedothis = 21;
+                break;
+<<<<<<< Updated upstream
             case "kick":
                 ifargstruedothis = 1;
                 break;
@@ -44,6 +112,22 @@ module.exports = {
                 break;
             case "unban":
                 ifargstruedothis = 3;
+=======
+            case "prefix":
+                ifargstruedothis = 22;
+                break;
+            case "snipe":
+                ifargstruedothis = 23;
+                break;
+            case "unban":
+                ifargstruedothis = 24;
+                break;
+            case "warn":
+                ifargstruedothis = 25;
+                break;
+            case "eval":
+                ifargstruedothis = 26;
+>>>>>>> Stashed changes
                 break;
             case "warn":
                 ifargstruedothis = 4;

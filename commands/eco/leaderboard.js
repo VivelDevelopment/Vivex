@@ -1,0 +1,105 @@
+const Discord = require('discord.js')
+const db = require('quick.db')
+
+const {
+  PREFIX,
+  approveemoji,
+  denyemoji
+} = require(`../../config/config.json`);
+module.exports = {
+  name: "eco-leaderboard",
+  description: `to put your money at bank`,
+  aliases: ["eco-leader"],
+  cooldown: 3,
+  edesc: `to get leaderboard Usage: ${PREFIX}eco-leaderboard <item>`,
+  async execute(message, args, client) {
+    let prefix = await db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) prefix = PREFIX;
+
+    const embed = new Discord.MessageEmbed()
+      .setDescription(`**Input a Leaderboard Option**\n\nCoin Leaderboard: ${prefix}leaderboard coins\nFresh Nikes Leaderboard: ${prefix}leaderboard nikes\nCar Leaderboard: ${prefix}leaderboard car\nMansion Leaderboard: ${prefix}leaderboard mansion\nDrip Leaderboard: ${prefix}leaderboard drip`)
+      .setColor("#FFFFFF")
+
+
+    if (!args[0]) return message.channel.send(embed)
+
+    if (args[0] == 'coins') {
+      let money = db.all(`money_${message.guild.id}`, { sort: '.data' })
+      let content = "";
+
+      for (let i = 0; i < money.length; i++) {
+        let user = client.users.cache.get(money[i].ID.split('_')[2]).username
+
+
+
+        content += `${i + 1}. ${user} ~ ${money[i].data}\n`
+
+      }
+
+      const embed = new Discord.MessageEmbed()
+        .setDescription(`**${message.guild.name}'s Coin Leaderboard**\n\n${content}`)
+        .setColor("#FFFFFF")
+
+      message.channel.send(embed)
+    } else if (args[0] == 'nikes') {
+      let nike = db.all(`nikes_${message.guild.id}`, { sort: '.data' })
+      let content = "";
+
+      for (let i = 0; i < nike.length; i++) {
+        let user = cclient.users.cache.get(nike[i].ID.split('_')[2]).username
+
+        content += `${i + 1}. ${user} ~ ${nike[i].data}\n`
+      }
+
+      const embed = new Discord.MessageEmbed()
+        .setDescription(`**${message.guild.name}'s Fresh Nikes Leaderboard**\n\n${content}`)
+        .setColor("#FFFFFF")
+
+      message.channel.send(embed)
+    } else if (args[0] == 'car') {
+      let cars = db.all(`car_${message.guild.id}`, { sort: '.data' })
+      let content = "";
+
+      for (let i = 0; i < cars.length; i++) {
+        let user = client.users.cache.get(cars[i].ID.split('_')[2]).username
+
+        content += `${i + 1}. ${user} ~ ${cars[i].data}\n`
+      }
+
+      const embed = new Discord.MessageEmbed()
+        .setDescription(`**${message.guild.name}'s Car Leaderboard**\n\n${content}`)
+        .setColor("#FFFFFF")
+
+      message.channel.send(embed)
+    } else if (args[0] == 'mansion') {
+      let mansions = db.all(`house_${message.guild.id}`, { sort: '.data' })
+      let content = "";
+
+      for (let i = 0; i < mansions.length; i++) {
+        let user = client.users.cache.get(mansions[i].ID.split('_')[2]).username
+
+        content += `${i + 1}. ${user} ~ ${mansions[i].data}\n`
+      }
+      const embed = new Discord.MessageEmbed()
+        .setDescription(`**${message.guild.name}'s Mansion Leaderboard**\n\n${content}`)
+        .setColor("#FFFFFF")
+
+      message.channel.send(embed)
+    } else if (args[0] == 'drip') {
+      let drips = db.all(`drip_${message.guild.id}`, { sort: '.data' })
+      let content = "";
+
+      for (let i = 0; i < drips.length; i++) {
+        let user = client.users.cache.get(drips[i].ID.split('_')[2]).username
+
+        content += `${i + 1}. ${user} ~ ${drips[i].data}\n`
+      }
+      const embed = new Discord.MessageEmbed()
+        .setDescription(`**${message.guild.name}'s drip Leaderboard**\n\n${content}`)
+        .setColor("#FFFFFF")
+
+      message.channel.send(embed)
+
+    }
+  }
+}

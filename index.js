@@ -36,6 +36,11 @@ for (const file of commandFiles) {
     const command = require(join(__dirname, `commands`, `${file}`));
     client.commands.set(command.name, command);
 }
+commandFiles = readdirSync(join(__dirname, `./commands/eco`)).filter((file) => file.endsWith(`.js`));
+for (const file of commandFiles) {
+    const command = require(join(__dirname, `./commands/eco`, `${file}`));
+    client.commands.set(command.name, command);
+}
 commandFiles = readdirSync(join(__dirname, `./commands/general`)).filter((file) => file.endsWith(`.js`));
 for (const file of commandFiles) {
     const command = require(join(__dirname, `./commands/general`, `${file}`));
@@ -135,4 +140,4 @@ function delay(delayInms) {
     });
 }
 
-//Bot coded by Beyondgod like
+//Bot coded by Beyond
