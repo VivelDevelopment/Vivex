@@ -36,6 +36,11 @@ for (const file of commandFiles) {
     const command = require(join(__dirname, `commands`, `${file}`));
     client.commands.set(command.name, command);
 }
+commandFiles = readdirSync(join(__dirname, `./commands/Mod`)).filter((file) => file.endsWith(`.js`));
+for (const file of commandFiles) {
+    const command = require(join(__dirname, `./commands/Mod`, `${file}`));
+    client.commands.set(command.name, command);
+}
 commandFiles = readdirSync(join(__dirname, `./commands/eco`)).filter((file) => file.endsWith(`.js`));
 for (const file of commandFiles) {
     const command = require(join(__dirname, `./commands/eco`, `${file}`));
@@ -51,11 +56,7 @@ for (const file of commandFiles) {
     const command = require(join(__dirname, `./commands/info`, `${file}`));
     client.commands.set(command.name, command);
 }
-commandFiles = readdirSync(join(__dirname, `./commands/Mod`)).filter((file) => file.endsWith(`.js`));
-for (const file of commandFiles) {
-    const command = require(join(__dirname, `./commands/Mod`, `${file}`));
-    client.commands.set(command.name, command);
-}
+
 commandFiles = readdirSync(join(__dirname, `./commands/owner`)).filter((file) => file.endsWith(`.js`));
 for (const file of commandFiles) {
     const command = require(join(__dirname, `./commands/owner`, `${file}`));
