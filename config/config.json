@@ -1,21 +1,13 @@
 {
-<<<<<<< Updated upstream
-    "TOKEN": "bruh",
-=======
     "TOKEN": "LOL",
->>>>>>> Stashed changes
     "PREFIX": "-",
     "approveemoji": "✅",
     "denyemoji": "❗",
     "erroremoji": "❌",
-<<<<<<< Updated upstream
-    "MONGO_URL": "NANI",
-=======
     "MONGO_URL": "BRUH",
     "red": "#b70000",
     "orange": "#ff6a00",
     "green": "#00ff26",
     "purple": "#d604cf",
->>>>>>> Stashed changes
     "ownerID": ["775970684588523570", "695520751842885672", "555064829946232832" , "580943526053806080", "423766601662464000"]
 }
