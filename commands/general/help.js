@@ -30,116 +30,83 @@ module.exports = {
         let ifargstruedothis = -1;
 
         switch (args[0]) {
-<<<<<<< Updated upstream
-               case "ban":
-=======
-            case "balance":
->>>>>>> Stashed changes
+            case "ban":
                 ifargstruedothis = 0;
                 break
-            case "beg":
+            case "kick":
                 ifargstruedothis = 1;
+                break;
+            case "prefix":
+                ifargstruedothis = 2;
+                break;
+            case "snipe":
+                ifargstruedothis = 3;
+                break;
+            case "unban":
+                ifargstruedothis = 4;
+                break;
+            case "warn":
+                ifargstruedothis = 5;
+                break;
+            case "balance":
+                ifargstruedothis = 6;
+                break
+            case "beg":
+                ifargstruedothis = 7;
                 break;
             case "buy":
-                ifargstruedothis = 2;
-                break;
-            case "daily":
-                ifargstruedothis = 3;
-                break;
-            case "deposit":
-                ifargstruedothis = 4;
-                break;
-            case "leaderboard":
-                ifargstruedothis = 5;
-                break;
-            case "pay":
-                ifargstruedothis = 6;
-                break;
-            case "profile":
-                ifargstruedothis = 7;
-                break;
-            case "removemoney":
                 ifargstruedothis = 8;
                 break;
-            case "rob":
+            case "daily":
                 ifargstruedothis = 9;
                 break;
-            case "roulette":
+            case "deposit":
                 ifargstruedothis = 10;
                 break;
-            case "sell":
+            case "leaderboard":
                 ifargstruedothis = 11;
                 break;
-            case "slots":
+            case "pay":
                 ifargstruedothis = 12;
                 break;
-            case "store":
+            case "profile":
                 ifargstruedothis = 13;
                 break;
-            case "store2":
+            case "removemoney":
                 ifargstruedothis = 14;
                 break;
-            case "weekly":
+            case "rob":
                 ifargstruedothis = 15;
                 break;
-            case "withdraw":
+            case "roulette":
                 ifargstruedothis = 16;
                 break;
-            case "work":
+            case "sell":
                 ifargstruedothis = 17;
                 break;
-            case "help":
+            case "slots":
                 ifargstruedothis = 18;
                 break;
-            case "docs":
+            case "store":
                 ifargstruedothis = 19;
                 break;
-            case "ban":
+            case "store2":
                 ifargstruedothis = 20;
                 break;
-            case "kick":
+            case "weekly":
                 ifargstruedothis = 21;
                 break;
-<<<<<<< Updated upstream
-            case "kick":
-                ifargstruedothis = 1;
-                break;
-             case "prefix":
-                ifargstruedothis = 2;
-                break;
-            case "snipe":
-                ifargstruedothis = 3;
-                break;
-            case "unban":
-                ifargstruedothis = 3;
-=======
-            case "prefix":
+            case "withdraw":
                 ifargstruedothis = 22;
                 break;
-            case "snipe":
+            case "work":
                 ifargstruedothis = 23;
                 break;
-            case "unban":
+            case "help":
                 ifargstruedothis = 24;
                 break;
-            case "warn":
-                ifargstruedothis = 25;
-                break;
-            case "eval":
-                ifargstruedothis = 26;
->>>>>>> Stashed changes
-                break;
-            case "warn":
-                ifargstruedothis = 4;
-                break;
-            case "help":
-                ifargstruedothis = 5;
-                break;
             case "docs":
-                ifargstruedothis = 6;
-                break;
-            case "eval":
-                ifargstruedothis = 7;
+                ifargstruedothis = 25;
                 break;
             default:
                 commands.forEach((cmd) => {
