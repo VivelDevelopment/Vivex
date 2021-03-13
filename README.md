@@ -1,8 +1,8 @@
-[![Downloads](https://img.shields.io/jsdelivr/gh/hw/VivelDevelopment/Vivex?label=Downloads)
-[![Activity](https://img.shields.io/github/commit-activity/m/VivelDevelopment/Vivex?style=for-the-badge)
-[![Date](https://img.shields.io/github/release-date-pre/VivelDevelopment/Vivex?style=for-the-badge)
-[![Pull requests](https://img.shields.io/bitbucket/pr-raw/VivelDevelopment/Vivex?style=for-the-badge)
-[![Issues](https://img.shields.io/bitbucket/issues/VivelDevelopment/Vivex?style=for-the-badge)
+(https://img.shields.io/jsdelivr/gh/hw/VivelDevelopment/Vivex?label=Downloads)
+(https://img.shields.io/github/commit-activity/m/VivelDevelopment/Vivex?style=for-the-badge)
+(https://img.shields.io/github/release-date-pre/VivelDevelopment/Vivex?style=for-the-badge)
+(https://img.shields.io/bitbucket/pr-raw/VivelDevelopment/Vivex?style=for-the-badge)
+(https://img.shields.io/bitbucket/issues/VivelDevelopment/Vivex?style=for-the-badge)
 
 #### Vivex Discord Bot
  
